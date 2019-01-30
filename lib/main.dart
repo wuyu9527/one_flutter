@@ -18,9 +18,7 @@ class MyApp extends StatelessWidget {
 }
 
 class RandomWordsState extends State<RandomWords> {
-  /*
-   *数组集合 
-   */
+  ///数组集合
   final _suggestions = <WordPair>[];
 
   ///组件textview
@@ -31,30 +29,30 @@ class RandomWordsState extends State<RandomWords> {
 
   @override
   Widget build(BuildContext context) {
-    //初始化textview
+    ///初始化textview
     _biggerFont = const TextStyle(fontSize: 18.0);
 
     return Scaffold(
       appBar: AppBar(
-        //标题
+        ///标题
         title: Text(
           'Startup Name Generator',
           textAlign: TextAlign.center,
         ),
-        //添加右菜单栏
+
+        ///添加右菜单栏
         actions: <Widget>[
-          //菜单栏按钮(点击的图标,点击调用的方法)
+          /// 菜单栏按钮(点击的图标,点击调用的方法)
           IconButton(icon: Icon(Icons.list), onPressed: _pushSaved),
         ],
       ),
-      //主体
+
+      ///主体
       body: _buildSuggestions(),
     );
   }
 
-/*
- *点击的方法 被调用的方法
- */
+  ///点击的方法 被调用的方法
   void _pushSaved() {
     //建立新的页面
     Navigator.of(context).push(MaterialPageRoute(
@@ -86,9 +84,7 @@ class RandomWordsState extends State<RandomWords> {
     ));
   }
 
-/*
- * listview主体
- */
+  ///listView主体
   Widget _buildSuggestions() {
     return ListView.builder(
       //设置padding
@@ -108,9 +104,7 @@ class RandomWordsState extends State<RandomWords> {
     );
   }
 
-/*
- *itemview单个 
- */
+  ///itemView单个
   Widget _buildRow(WordPair pair) {
     //保存的数组是否有 boolean
     final alreadySaved = _saved.contains(pair);
