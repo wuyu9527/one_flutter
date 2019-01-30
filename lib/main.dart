@@ -15,20 +15,20 @@ class MyApp extends StatelessWidget {
       home: RandomWords(),
     );
   }
-
 }
-
-
 
 class RandomWordsState extends State<RandomWords> {
   /*
    *数组集合 
    */
   final _suggestions = <WordPair>[];
+
   ///组件textview
   var _biggerFont;
+
   ///保存的数组集合
   final _saved = Set<WordPair>();
+
   @override
   Widget build(BuildContext context) {
     //初始化textview
@@ -37,7 +37,10 @@ class RandomWordsState extends State<RandomWords> {
     return Scaffold(
       appBar: AppBar(
         //标题
-        title: Text('Startup Name Generator',textAlign: TextAlign.center,),
+        title: Text(
+          'Startup Name Generator',
+          textAlign: TextAlign.center,
+        ),
         //添加右菜单栏
         actions: <Widget>[
           //菜单栏按钮(点击的图标,点击调用的方法)
@@ -83,7 +86,7 @@ class RandomWordsState extends State<RandomWords> {
     ));
   }
 
-/**
+/*
  * listview主体
  */
   Widget _buildSuggestions() {
